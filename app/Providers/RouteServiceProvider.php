@@ -17,6 +17,14 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     /**
+     * This namespace is applied to your public pages controller routes.
+     *
+     *
+     * @var string
+     */
+    protected $publicPagesNamespace = 'App\Http\Controllers\PublicPages';
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
@@ -54,6 +62,12 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
+
+
+        // Public pages routes
+        Route::middleware('web')
+             ->namespace($this->publicPagesNamespace)
+             ->group(base_path('routes/public-pages/publicPages.php'));
     }
 
     /**
