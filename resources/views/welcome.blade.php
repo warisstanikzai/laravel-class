@@ -79,15 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{ @trans('public.appName') }}
                 </div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ url('/localize/da') }}">دری</a>
+                    <a href="{{ url('/localize/pa') }}">پشتو</a>
+                    <a href="{{  url('/localize/en') }}">English</a>
                 </div>
             </div>
         </div>

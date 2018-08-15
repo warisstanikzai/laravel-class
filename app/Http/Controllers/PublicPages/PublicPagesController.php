@@ -14,6 +14,12 @@ class PublicPagesController extends Controller
 
     public function register(Request $request)
     {
-        return $request;
+        return $request->name;
+    }
+
+
+    public function user($id = 1)
+    {
+        return $id;
     }
 }

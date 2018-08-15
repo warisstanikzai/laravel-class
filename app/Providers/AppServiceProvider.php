@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
+
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->customBlade();
     }
 
     /**
@@ -24,5 +27,20 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+
+
+    /**
+     * Define the custom blade template engine
+     *
+     * @return void
+     */
+    protected function customBlade()
+    {
+        // return the authentiated user name
+        Blade::directive('admin', function () {
+            return "<?php echo Auth::user()->name ?>";
+        });
     }
 }
