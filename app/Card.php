@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Card extends Model
 {
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name','file_path'];
 
     public $timestamps  = false;
 

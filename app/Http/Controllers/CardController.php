@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\CardRequest;
 use Illuminate\Http\Request;
 use App\Card;
+use Illuminate\Support\Facades\Validator;
 
 class CardController extends Controller
 {
@@ -37,9 +39,18 @@ class CardController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CardRequest $request)
     {
-        Card::create($request->all());
+        $fileUrl = '';
+        if ($request->file('file_path'))
+        {
+            $fileUrl = $this->uploadFile($request);
+        }
+
+        Card::create([
+            'name'      => $request->name,
+            'file_path' => $fileUrl,
+        ]);
 
         return redirect('/cards');
     }
@@ -100,4 +111,33 @@ class CardController extends Controller
 
         return $card;
     }
+
+
+    /**
+     * Get upload a file to folder
+     *
+     * @param $request
+     * @return string
+     */
+    private function uploadFile($request)
+    {
+        $file = $request->file('file_path');
+        $rand_name = str_random(16);
+        $extension = $file->getClientOriginalExtension();
+        $file_url = $rand_name . '.' . $extension;
+        if ($extension == 'pdf')
+        {
+            $file->move(public_path('pdf/'), $file_url);
+            $file_url = 'pdf/' . $file_url;
+        }
+
+        if ($extension == 'png')
+        {
+            $file->move(public_path('png/'), $file_url);
+            $file_url = 'png/' . $file_url;
+        }
+
+        return $file_url;
+    }
 }
+

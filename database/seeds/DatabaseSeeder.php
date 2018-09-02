@@ -3,6 +3,8 @@
 use App\Medicine;
 use App\Order;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,7 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        if(Permission::count() == 0) $this->call(PermissionTableSeeder::class);
+        if(Role::count() == 0) $this->call(RoleTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
         if(Medicine::count() == 0) $this->call('MedicineSeeder');
         if(Order::count() == 0) $this->call('OrderSeeder');
     }

@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCardTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -16,6 +17,7 @@ class CreateCardTable extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('file_path')->nullable();
         });
     }
 

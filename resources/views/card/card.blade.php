@@ -7,6 +7,7 @@
         <tr>
             <th>Id</th>
             <th>Card Name</th>
+            <th>File</th>
             <th>Create Date</th>
             <th>Note Count</th>
             <th>Edit</th>
@@ -15,6 +16,11 @@
             <tr>
                 <td>{{$card->id}}</td>
                 <td>{{$card->name}}</td>
+                <td>
+                    <a href="{{ asset($card->file_path) }}">
+                        file
+                    </a>
+                </td>
                 <td>{{$card->created_at}}</td>
                 <td></td>
                 <td><a href="{{ url('cards/'.$card->id.'/edit') }}">Edit</a></td>
