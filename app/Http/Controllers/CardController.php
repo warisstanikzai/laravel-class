@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Requests\CardRequest;
 use Illuminate\Http\Request;
 use App\Card;
@@ -41,18 +40,11 @@ class CardController extends Controller
      */
     public function store(CardRequest $request)
     {
-        $fileUrl = '';
-        if ($request->file('file_path'))
-        {
-            $fileUrl = $this->uploadFile($request);
-        }
-
-        Card::create([
-            'name'      => $request->name,
-            'file_path' => $fileUrl,
+        $card = Card::create([
+            'name' => $request->name
         ]);
 
-        return redirect('/cards');
+        return $card;
     }
 
     /**
@@ -125,14 +117,12 @@ class CardController extends Controller
         $rand_name = str_random(16);
         $extension = $file->getClientOriginalExtension();
         $file_url = $rand_name . '.' . $extension;
-        if ($extension == 'pdf')
-        {
+        if ($extension == 'pdf') {
             $file->move(public_path('pdf/'), $file_url);
             $file_url = 'pdf/' . $file_url;
         }
 
-        if ($extension == 'png')
-        {
+        if ($extension == 'png') {
             $file->move(public_path('png/'), $file_url);
             $file_url = 'png/' . $file_url;
         }
@@ -140,4 +130,3 @@ class CardController extends Controller
         return $file_url;
     }
 }
-

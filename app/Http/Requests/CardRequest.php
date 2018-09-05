@@ -25,7 +25,6 @@ class CardRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:10|string',
-            'file_path' =>'nullable|file'
         ];
     }
 }

@@ -14,7 +14,9 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        //
+        $medicines = Medicine::all()->take(10);
+
+        return view('medicine.medicine', compact('medicines'));
     }
 
     /**
@@ -81,5 +83,19 @@ class MedicineController extends Controller
     public function destroy(Medicine $medicine)
     {
         //
+    }
+
+    public function tableView()
+    {
+        $medicines  = Medicine::all()->take(10);
+
+        return view('medicine.medicine-table', compact('medicines'));
+    }
+
+    public function cardView()
+    {
+        $medicines  = Medicine::all()->take(10);
+
+        return view('medicine.medicine-card', compact('medicines'));
     }
 }

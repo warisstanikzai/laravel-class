@@ -11,14 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/localize/{lang}', 'LocalizationController@localize');
-
-Route::resource('/cards', 'CardController');
-
 Auth::routes();
 
+Route::get('/','PublicController@publicPages');
 Route::get('/home', 'HomeController@index')->name('home');
+
