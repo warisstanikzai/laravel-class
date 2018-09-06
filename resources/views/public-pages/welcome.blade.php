@@ -179,28 +179,42 @@
     </div>
 
     <div class="ui text container">
-      <h1 class="ui inverted header">
+      <h1 class="ui inverted header" id="heading1">
         Online Shopping
       </h1>
       <h2>Buy something online, Welcome.</h2>
       <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
     </div>
-
   </div>
+
+
+
 
   <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
-        <div class="eight wide column">
-          <h3 class="ui header">We Help Companies and Companions</h3>
-          <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-          <h3 class="ui header">We Make Bananas That Can Dance</h3>
-          <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+
+        <div class="blog">
+          <h3 class="ui header">Amazon Fashion</h3>
+          <img src="../public/images/fashion1.jpg" alt="Not Found">
         </div>
-        <div class="six wide right floated column">
-          <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+        <div class="blog">
+          <h3 class="ui header">Get ready for school</h3>
+          <img src="../public/images/school1.jpg" alt="Not Found">
         </div>
+        <div class="blog">
+          <h3 class="ui header">Deal of the day</h3>
+          <img src="../public/images/deal1.jpg" alt="Not Found">
+        </div>
+
       </div>
+
+      </div>
+
+
+
+
+
       <div class="row">
         <div class="center aligned column">
           <a class="ui huge button">Check Them Out</a>
@@ -264,8 +278,7 @@
           </div>
         </div>
         <div class="seven wide column">
-          <h4 class="ui inverted header">Footer Header</h4>
-          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13149.12685285726!2d69.18167413129669!3d34.52108996712591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d16955a4c0c149%3A0xf950a71694cf05e3!2sPule+Mahmoud%2C+Kabul%2C+Afghanistan!5e0!3m2!1sen!2s!4v1536221909550" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>iframe src="https://www.google.com/maps/embed?pb" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </div>
     </div>

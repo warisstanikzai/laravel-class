@@ -1,7 +1,20 @@
 #banner-div{
-	background-image: url('../images/banner.jpg');
+	background-image: url('../images/banner2.jpg');
+	background-repeat: no-repeat;
+	background-color: tomato;
+
 }
 
 #pointing-menu{
 	border:none;
+}
+
+#heading1
+{
+margin-top:240px;
+}
+
+.blog
+{
+	padding:0px 20px 20px 20px;
 }
